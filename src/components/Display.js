@@ -5,7 +5,7 @@ class Display extends React.Component {
 		balls: 0,
 		strikes: 0,
 		fouls: 0,
-		hit: 0
+		hits: 0
 	};
 
 	balls = () => {
@@ -50,6 +50,19 @@ class Display extends React.Component {
 			this.setState({
 				fouls: foul + 1
 			});
+		}
+	};
+
+	hits = () => {
+		let hit = this.state.hits;
+		if (hit >= 0) {
+			this.setState({
+				hits: hit + 1,
+				strikes: 0,
+				balls: 0
+			});
+		} else {
+			return hit;
 		}
 	};
 
