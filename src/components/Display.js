@@ -7,26 +7,32 @@ class Display extends React.Component {
 	};
 
 	balls = () => {
-		if (this.state.balls < 4) {
+		let ball = this.state.balls;
+		if (ball < 4) {
 			this.setState({
-				balls: this.state.balls + 1
+				balls: ball + 1
 			});
-		} else if ((this.state.balls = 4)) {
+		} else if ((ball = 4)) {
 			this.setState({
 				balls: 0
 			});
+		} else {
+			return ball;
 		}
 	};
 
 	strikes = () => {
-		if (this.state.strikes < 3) {
+		let strike = this.state.strikes;
+		if (strike < 3) {
 			this.setState({
-				strikes: this.state.strikes + 1
+				strikes: strike + 1
 			});
-		} else if ((this.state.strikes = 3)) {
+		} else if ((strike = 3)) {
 			this.setState({
 				strikes: 0
 			});
+		} else {
+			return strike;
 		}
 	};
 
