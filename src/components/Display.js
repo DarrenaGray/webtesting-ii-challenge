@@ -12,6 +12,12 @@ class Display extends React.Component {
 		});
 	};
 
+	strikes = () => {
+		this.setState({
+			strikes: this.state.strikes + 1
+		});
+	};
+
 	render() {
 		return (
 			<div>
@@ -19,6 +25,7 @@ class Display extends React.Component {
 				<p>Balls: {this.state.balls}</p>
 				<button onClick={this.balls}>Balls</button>
 				<p>Strikes: {this.state.strikes}</p>
+				<button onClick={this.strikes}>Strikes</button>
 			</div>
 		);
 	}
