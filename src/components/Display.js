@@ -43,11 +43,13 @@ class Display extends React.Component {
 		let foul = this.state.fouls;
 		if (foul <= 1 && strike <= 1) {
 			this.setState({
-				fouls: (foul += 1),
+				fouls: foul + 1,
 				strikes: strike + 1
 			});
 		} else {
-			return null;
+			this.setState({
+				fouls: foul + 1
+			});
 		}
 	};
 
