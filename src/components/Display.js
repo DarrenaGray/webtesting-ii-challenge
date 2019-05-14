@@ -19,9 +19,15 @@ class Display extends React.Component {
 	};
 
 	strikes = () => {
-		this.setState({
-			strikes: this.state.strikes + 1
-		});
+		if (this.state.strikes < 3) {
+			this.setState({
+				strikes: this.state.strikes + 1
+			});
+		} else if ((this.state.strikes = 3)) {
+			this.setState({
+				strikes: 0
+			});
+		}
 	};
 
 	render() {
