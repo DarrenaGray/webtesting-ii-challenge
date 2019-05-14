@@ -7,9 +7,15 @@ class Display extends React.Component {
 	};
 
 	balls = () => {
-		this.setState({
-			balls: this.state.balls + 1
-		});
+		if (this.state.balls < 4) {
+			this.setState({
+				balls: this.state.balls + 1
+			});
+		} else if ((this.state.balls = 4)) {
+			this.setState({
+				balls: 0
+			});
+		}
 	};
 
 	strikes = () => {
@@ -23,7 +29,9 @@ class Display extends React.Component {
 			<div>
 				<h3>Display</h3>
 				<p>Balls: {this.state.balls}</p>
-				<button onClick={this.balls}>Balls</button>
+				<button data-testid='balls' onClick={this.balls}>
+					Balls
+				</button>
 				<p>Strikes: {this.state.strikes}</p>
 				<button onClick={this.strikes}>Strikes</button>
 			</div>
