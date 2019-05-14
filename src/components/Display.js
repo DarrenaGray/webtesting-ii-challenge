@@ -38,6 +38,8 @@ class Display extends React.Component {
 		}
 	};
 
+	rese;
+
 	fouls = () => {
 		let strike = this.state.strikes;
 		let foul = this.state.fouls;
@@ -66,6 +68,18 @@ class Display extends React.Component {
 		}
 	};
 
+	resetFouls = () => {
+		this.setState({
+			fouls: 0
+		});
+	};
+
+	resetHits = () => {
+		this.setState({
+			hits: 0
+		});
+	};
+
 	render() {
 		return (
 			<div>
@@ -78,8 +92,10 @@ class Display extends React.Component {
 				<button onClick={this.strikes}>Strikes</button>
 				<p>Fouls: {this.state.fouls}</p>
 				<button onClick={this.fouls}>Fouls</button>
+				<button onClick={this.resetFouls}>Reset</button>
 				<p>Hits: {this.state.hits}</p>
 				<button onClick={this.hits}>Hits</button>
+				<button onClick={this.resetHits}>Reset</button>
 			</div>
 		);
 	}
