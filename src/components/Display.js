@@ -3,7 +3,9 @@ import React from 'react';
 class Display extends React.Component {
 	state = {
 		balls: 0,
-		strikes: 0
+		strikes: 0,
+		fouls: 0,
+		hit: 0
 	};
 
 	balls = () => {
@@ -36,6 +38,17 @@ class Display extends React.Component {
 		}
 	};
 
+	fouls = () => {
+		let strike = this.state.strikes;
+		let foul = this.state.fouls;
+		if (foul <= 1) {
+			this.setState({
+				fouls: (foul += 1),
+				strikes: strike + 1
+			});
+		}
+	};
+
 	render() {
 		return (
 			<div>
@@ -46,6 +59,10 @@ class Display extends React.Component {
 				</button>
 				<p>Strikes: {this.state.strikes}</p>
 				<button onClick={this.strikes}>Strikes</button>
+				<p>Fouls: {this.state.fouls}</p>
+				<button onClick={this.fouls}>Fouls</button>
+				<p>Hits: {this.state.hits}</p>
+				<button onClick={this.hits}>Hits</button>
 			</div>
 		);
 	}
