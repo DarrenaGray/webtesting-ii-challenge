@@ -57,15 +57,11 @@ class Display extends React.Component {
 
 	hits = () => {
 		let hit = this.state.hits;
-		if (hit >= 0) {
-			this.setState({
-				hits: hit + 1,
-				strikes: 0,
-				balls: 0
-			});
-		} else {
-			return hit;
-		}
+		this.setState({
+			hits: hit + 1,
+			strikes: 0,
+			balls: 0
+		});
 	};
 
 	resetFouls = () => {
