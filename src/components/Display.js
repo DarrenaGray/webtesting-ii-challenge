@@ -1,4 +1,5 @@
 import React from 'react';
+import Dashboard from './Dashboard';
 
 class Display extends React.Component {
 	state = {
@@ -81,17 +82,18 @@ class Display extends React.Component {
 			<div>
 				<h3>Display</h3>
 				<p>Balls: {this.state.balls}</p>
-				<button data-testid='balls' onClick={this.balls}>
-					Balls
-				</button>
 				<p>Strikes: {this.state.strikes}</p>
-				<button onClick={this.strikes}>Strikes</button>
 				<p>Fouls: {this.state.fouls}</p>
-				<button onClick={this.fouls}>Fouls</button>
-				<button onClick={this.resetFouls}>Reset</button>
 				<p>Hits: {this.state.hits}</p>
-				<button onClick={this.hits}>Hits</button>
-				<button onClick={this.resetHits}>Reset</button>
+				<Dashboard
+					display={this.state}
+					balls={this.balls}
+					strikes={this.strikes}
+					fouls={this.fouls}
+					resetFouls={this.resetFouls}
+					hits={this.hits}
+					resetHits={this.resetHits}
+				/>
 			</div>
 		);
 	}
